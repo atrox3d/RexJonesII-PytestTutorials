@@ -26,6 +26,7 @@ def testRexWebsite(driver):
   driver.get("https://rexjones2.com")
   print("Title: ", driver.title)
 
+# ignored by pytest
 def google_test(driver):
   # driver = webdriver.Chrome()
   driver.maximize_window()
