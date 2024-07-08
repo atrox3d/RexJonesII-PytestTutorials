@@ -3,6 +3,7 @@
         "DemoFirstTest",
         "DemoPytest/test_assertions_hard.py",
         "DemoPytest/test_assertions_soft.py",
+        "DemoPytest/test_multiple_subset_iphone.py"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
