@@ -4,13 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-@pytest.fixture
-def driver():
-  options = webdriver.ChromeOptions()
-  options.add_argument("--headless=new")
-  driver = webdriver.Chrome(options=options)
-  return driver
-
 class AssertionsTest(softest.TestCase):
   pass
 
