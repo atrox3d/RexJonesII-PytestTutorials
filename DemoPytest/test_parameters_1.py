@@ -18,7 +18,7 @@ driver = get_driver()
 @pytest.mark.parametrize("num1, num2, expected_total",
                         [
                          ("25", "25", "50"),
-                         ("10", "10", "30"),
+                         ("10", "10", "30"),  # this will fail
                          ("30", "40", "70")
                         ],)
 def test_lambdatest_two_input_fields(num1, num2, expected_total):
@@ -33,8 +33,13 @@ def test_lambdatest_two_input_fields(num1, num2, expected_total):
   actual_total = driver.find_element(By.ID, "addmessage").text
   assert actual_total == expected_total, "Actual & Expected Totals Do Not Match"
 
-@pytest.mark.parametrize("base", [1, 2, 3])
+@pytest.mark.parametrize("base",     [1, 2, 3])
 @pytest.mark.parametrize("exponent", [4, 5, 6])
+# using two decorators will generate all combinations from base and exponent, starting from the last
+#                                     4(1, 2, 3) = (4, 1), (4, 2), (4, 3)
+#                                     5(1, 2, 3) = (5, 1), (5, 2), (5, 3)
+#                                     6(1, 2, 3) = (6, 1), (6, 2), (6, 3)
 def test_raising_base_to_power(base, exponent):
   result = base ** exponent
+  print(f'{base=}, {exponent=}, {result=}')
   assert result == math.pow(base, exponent)
