@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 class AssertionsTest(softest.TestCase):
   pass
 
+  @pytest.mark.xfail(reason='testing failure')
   def test_lambdatest_radio_button_demo_value(self):
     # driver = webdriver.Chrome()
     # driver.maximize_window()

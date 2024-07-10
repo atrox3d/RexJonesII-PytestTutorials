@@ -6,6 +6,8 @@
         "DemoPytest/test_multiple_subset_iphone.py",
         "DemoPytest/test_multiple_subset_form.py",
         "DemoPytest/test_markers_group.py",
+        "DemoPytest/test_fixtures_1.py",
+        "DemoPytest/test_fixtures_2.py",
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true

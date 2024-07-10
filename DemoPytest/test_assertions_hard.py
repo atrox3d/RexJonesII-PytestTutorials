@@ -12,6 +12,7 @@ def driver():
   driver = webdriver.Chrome(options=options)
   return driver
 
+@pytest.mark.xfail(reason='testing test fail')
 def test_lambdatest_radio_button_demo_value(driver):
   # driver = webdriver.Chrome()
   driver.maximize_window()
