@@ -4,19 +4,35 @@ from selenium.webdriver.remote.remote_connection import RemoteConnection
 
 from utilities.test_data import TestData
 
+# params will pass each value as request.param to the fixture
+# fixture reference: https://docs.pytest.org/en/7.1.x/reference/reference.html#pytest.fixture
+# request object reference: https://docs.pytest.org/en/7.1.x/reference/reference.html#request
 @pytest.fixture(params=["chrome", "firefox", "edge"])
 def initialize_driver(request):
+  print("Browser: ", request.param)
+
   if request.param == "chrome":
     driver = webdriver.Chrome()
   elif request.param == "firefox":
     driver = webdriver.Firefox()
   elif request.param == "edge":
     driver = webdriver.Edge()
+  #
+  # add driver attribute to the calling class
+  #
   request.cls.driver = driver
-  print("Browser: ", request.param)
+  #
+  # get url from utility class
+  #
   driver.get(TestData.url)
   driver.maximize_window()
+  #
+  # yields control
+  #
   yield
+  #
+  # regain control and close driver
+  #
   print("Close Driver")
   driver.close()
 

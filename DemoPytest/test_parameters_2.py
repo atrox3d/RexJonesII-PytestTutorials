@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 
+# defined in conftest.py
 @pytest.mark.usefixtures("initialize_driver")
 class BaseClass:
   pass
