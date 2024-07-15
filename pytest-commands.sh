@@ -27,4 +27,7 @@ pytest --fixtures DemoPytest/test_fixtures_1.py::test1_order_history_title
 
 # collects test and show parameters
 pytest --collect-only [filename]
+
+# stops tests after {maxfail} failures
+pytest --maxfail=1 [filename]
 EOE
