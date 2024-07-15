@@ -7,7 +7,12 @@ from utilities.test_data import TestData
 # params will pass each value as request.param to the fixture
 # fixture reference: https://docs.pytest.org/en/7.1.x/reference/reference.html#pytest.fixture
 # request object reference: https://docs.pytest.org/en/7.1.x/reference/reference.html#request
-@pytest.fixture(params=["chrome", "firefox", "edge"])
+@pytest.fixture(params=[
+                  "chrome", 
+                  "firefox", 
+                  # pytest.mark.xfail("edge", reason='edge web driver not working'),
+                  # "edge"
+                ])
 def initialize_driver(request):
   print("Browser: ", request.param)
 
