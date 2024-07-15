@@ -11,7 +11,7 @@ from utilities.test_data import TestData
                   "chrome", 
                   "firefox", 
                   # pytest.mark.xfail("edge", reason='edge web driver not working'),
-                  # "edge"
+                  "edge"
                 ])
 def initialize_driver(request):
   print("Browser: ", request.param)
@@ -21,6 +21,7 @@ def initialize_driver(request):
   elif request.param == "firefox":
     driver = webdriver.Firefox()
   elif request.param == "edge":
+    pytest.skip(reason='microsoft edge webdriver not working under macos sonoma')
     driver = webdriver.Edge()
   #
   # add driver attribute to the calling class
