@@ -9,7 +9,7 @@ class TestLambdaTest:
     #
     # skip directly
     #
-    pytest.skip()
+    # pytest.skip()
     driver = webdriver.Chrome()
     driver.get("https://lambdatest.github.io/sample-todo-app/")
     expected_title = "Sample page - lambdatest.com"
