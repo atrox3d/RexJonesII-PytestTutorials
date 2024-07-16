@@ -1,3 +1,4 @@
+import pytest
 from pages.change_password_page import ChangePasswordPage
 from pages.login_page import LoginPage
 from tests.base_test import BaseTest
@@ -5,6 +6,7 @@ from utilities.test_data import TestData
 
 class TestChangePassword(BaseTest):
 
+  @pytest.mark.xfail(reason='account no longer valid')
   def test_changing_password(self):
     login_page = LoginPage(self.driver)
     change_password_page = ChangePasswordPage(self.driver)
