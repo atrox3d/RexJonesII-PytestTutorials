@@ -30,4 +30,7 @@ pytest --collect-only [filename]
 
 # stops tests after {maxfail} failures
 pytest --maxfail=1 [filename]
+
+# generate html report (requires pip install)
+pytest --html={path/to/report.html} [filename]
 EOE
